@@ -1,0 +1,8 @@
+#summary regimun installation instructions
+
+= RegiMUN Installation =
+Check out the source from SVN (see the Source tab) or download the tarball (see the Downloads tab).
+ # Copy the source to somewhere that is PHP-enabled for your web server.
+ # Edit config.php to your liking.
+ # Create the data and backup directories (set in config.php) and chmod 777 them.
+ # Edit the CSS files to your liking.
