@@ -4,7 +4,7 @@
 Check out the source from SVN (see the Source tab) or download the tarball (see the Downloads tab).
  # Copy the source to somewhere that is PHP-enabled for your web server.  For example, copy all the files to a folder called registration in your main web folder.
  # Move the "data" folder and its contents to somewhere on your server that is NOT accessible by the web.  For example, move it outside your www or public_html folder.  The data folder contains sensitive information about your students that you want to protect.
- # Change the permissions of the data folder and its contents to read, write, and execute for everybody.  Your website hosting provider may provide an online form to do this.  This is chmod 777 is you're familiar.
+ # Change the permissions of the data folder and its contents to read, write, and execute for everybody.  Your website hosting provider may provide an online form to do this.  This is chmod 777 if you're familiar and have shell access to the server.
  # Change the permissions of configdata.php to read, write, and execute for everybody.
  # Login to the Secretariat Dashboard at secretariat.php through a web browser.  If you put the system code in a registration folder in your main web folder, the URL will be http://www.yoursite.com/registration/secretariat.php.  The default password is "secretariat".
  # Click on "Configure registration system" and make changes to personalize the system for your conference.  The minimum changes you need to make are the Secretariat Password and everything under "Registration Data Location" (to reflect where you moved the data folder to).
