@@ -9,3 +9,5 @@ Check out the source from SVN (see the Source tab) or download the tarball (see 
  # Login to the Secretariat Dashboard at secretariat.php through a web browser.  If you put the system code in a registration folder in your main web folder, the URL will be http://www.yoursite.com/registration/secretariat.php.  The default password is "secretariat".
  # Click on "Configure registration system" and make changes to personalize the system for your conference.  The minimum changes you need to make are the Secretariat Password and everything under "Registration Data Location" (to reflect where you moved the data folder to).
  # Edit the CSS files in the css folder (invoice.css and registration.css) to your liking.
+
+You're now ready to use the registration system!  The main page for schools is index.php and the main page for Secretariat is secretariat.php.  If you put the system in a "registration" folder in your main web folder, that would http://www.yoursite.com/registration/index.php and http://www.yoursite.com/registration/secretariat.php.
