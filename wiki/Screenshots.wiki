@@ -1,0 +1,6 @@
+#summary Screenshots of RegiMUN
+
+== Login Page ==
+Schools can create their own account and reset their own password, with no need for help from secretariat members.
+
+http://farm6.static.flickr.com/5281/5343619546_40ef69d1e0.jpg
