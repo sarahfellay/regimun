@@ -1,0 +1,29 @@
+#summary Installation Instructions for RegiMUN
+
+= Introduction =
+
+RegiMUN is a [http://www.djangoproject.com Django framework] application.  Your web server should have Django installed before installing RegiMUN.  See the Django website for instructions on installing the framework, or your web hosting provider may have a one-click install through your site's control panel.
+
+Installing RegiMUN requires command-line access to your web server (typically via SSH), but does not require administrator access.
+
+== Download RegiMUN ==
+
+To download the RegiMUN code, run:
+{{{
+svn checkout http://regimun.googlecode.com/svn/trunk/ regimun-read-only
+}}}
+
+= Install Python Libraries =
+
+RegiMUN depends on Python libraries that do not typically come installed on a web server.
+ * [http://www.reportlab.com/software/opensource/rl-toolkit/download/ Report Lab Toolkit]
+ * [http://code.google.com/p/html5lib/ HTML5Lib]
+ * [http://www.xhtml2pdf.com/ XHTML2PDF/Pisa]
+ * [http://pypi.python.org/pypi/recaptcha-client Recaptcha Client]
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
