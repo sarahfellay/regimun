@@ -1,10 +1,12 @@
 #summary Installation Instructions for RegiMUN
 
+= IN PROGRESS =
+
 = Introduction =
 
 RegiMUN is a [http://www.djangoproject.com Django framework] application.  Your web server should have Django installed before installing RegiMUN.  See the Django website for instructions on installing the framework, or your web hosting provider may have a one-click install through your site's control panel.
 
-Installing RegiMUN requires command-line access to your web server (typically via SSH), but does not require administrator access.
+Installing RegiMUN requires command-line access to your web server (typically via SSH), but does not require administrator access.  The following instructions assume that you are using the command line on your server.
 
 = Download RegiMUN =
 
@@ -30,7 +32,7 @@ easy_install reportlab html5lib pisa recaptcha-client
 
 === Without Server Admin Access ===
 
-Download the packages from the above site on your server, and install them to a non-admin directory. Add the install paths to the PYTHON_PATH environment variable.
+Download the packages from the above sites on your server, and install them to a non-admin directory. Add the install paths to the PYTHON_PATH environment variable.
 
 = Details =
 
