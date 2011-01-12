@@ -6,7 +6,7 @@ RegiMUN is a [http://www.djangoproject.com Django framework] application.  Your 
 
 Installing RegiMUN requires command-line access to your web server (typically via SSH), but does not require administrator access.
 
-== Download RegiMUN ==
+= Download RegiMUN =
 
 To download the RegiMUN code, run:
 {{{
@@ -20,6 +20,17 @@ RegiMUN depends on Python libraries that do not typically come installed on a we
  * [http://pypi.python.org/pypi/html5lib/0.90 HTML5Lib]
  * [http://pypi.python.org/pypi/pisa Pisa]
  * [http://pypi.python.org/pypi/recaptcha-client Recaptcha Client]
+
+=== With Server Admin Access and easy_install ===
+
+Run the following command:
+{{{
+easy_install reportlab html5lib pisa recaptcha-client
+}}}
+
+=== Without Server Admin Access ===
+
+Download the packages from the above site on your server, and install them to a non-admin directory. Add the install paths to the PYTHON_PATH environment variable.
 
 = Details =
 
