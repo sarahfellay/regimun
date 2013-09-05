@@ -230,7 +230,7 @@ class FeeStructure(models.Model):
 			if penalty.based_on == 'Co1':
 				valid_schools = DelegationRequest.objects.filter(school__id__in=valid_school_ids, conference=self.conference, created__gte=penalty.start_date, created__lte=penalty.end_date).values('school')
 			elif penalty.based_on == 'Co2':
-				valid_schools = CountryPreference.objects.filter(school__id__in=valid_school_ids, request__conference=self.conference, last_modified__gte=penalty.start_date, last_modified__lte=penalty.end_date).values('request__school')
+				valid_schools = CountryPreference.objects.filter(request__school__id__in=valid_school_ids, request__conference=self.conference, last_modified__gte=penalty.start_date, last_modified__lte=penalty.end_date).values('request__school')
 			elif penalty.based_on == 'DSu':
 				valid_schools = Delegate.objects.filter(position_assignment__country__conference=self.conference, created__gte=penalty.start_date, created__lte=penalty.end_date).values('position_assignment__school')
 			elif penalty.based_on == 'DMo':
