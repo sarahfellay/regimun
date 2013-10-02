@@ -1,11 +1,10 @@
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import EmailMultiAlternatives
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils import simplejson
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 from regimun_app.forms import SchoolMailingAddressForm, EditFacultySponsorForm, \
     DelegateNameForm
 from regimun_app.models import Conference, School, FacultySponsor, \
@@ -14,7 +13,6 @@ from regimun_app.models import Conference, School, FacultySponsor, \
 from regimun_app.views.school_admin import school_authenticate, \
     get_country_preferences_html, is_school_registered
 import inspect
-import smtplib
 import string
 
 @login_required
@@ -221,12 +219,6 @@ def set_country_preferences(request, school, conference):
             sender = conference.email_address
             to = conference.email_address
             
-            # Create message container - the correct MIME type is multipart/alternative.
-            msg = MIMEMultipart('alternative')
-            msg['Subject'] = "Country Preferences Submission: " + school.name
-            msg['From'] = sender
-            msg['To'] = to
-            
             # Body of the message (a plain-text and an HTML version).
             text = "Country preferences submitted for " + school.name + "\n"
             for i in range(len(country_names)):
@@ -244,20 +236,10 @@ def set_country_preferences(request, school, conference):
             
             html += "</ol>Total delegates requested: " + str(count) + "</p></body></html>"
 
-            # Record the MIME types of both parts - text/plain and text/html.
-            part1 = MIMEText(text, 'plain')
-            part2 = MIMEText(html, 'html')
-            
-            # Attach parts into message container.
-            # According to RFC 2046, the last part of a multipart message, in this case
-            # the HTML message, is best and preferred.
-            msg.attach(part1)
-            msg.attach(part2)
-            
-            # Send the message via local SMTP server.
-            s = smtplib.SMTP('localhost')
-            s.sendmail(sender, to, msg.as_string())
-            s.quit()
+            subject = "Country Preferences Submission: " + school.name
+            msg = EmailMultiAlternatives(subject, text, sender, [to])
+            msg.attach_alternative(html, "text/html")
+            msg.send()
         
         return simplejson.dumps({'prefs':get_country_preferences_html(school,conference)})
         
